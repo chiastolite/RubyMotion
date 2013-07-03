@@ -43,7 +43,7 @@ module Motion; module Project
       end
     end
 
-    Templates = Paths.map { |path| Dir.glob(path + '/*') }.flatten.select { |x| !x.match(/^\./) and File.directory?(x) }.map { |x| File.basename(x) }
+    Templates = all_templates.keys
 
     def initialize(app_name, template_name)
       @name = @app_name = app_name
